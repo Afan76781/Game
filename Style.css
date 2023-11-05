@@ -1,0 +1,333 @@
+html{
+   background: #0c001d;
+}
+body{
+   display: flex;
+   font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
+   flex-direction: column;
+   height: 80vh;
+   justify-content: center;
+   align-items: center;
+   animation: trans 2s 1 ease forwards;
+   transform: translateY(200px);
+   filter: opacity(0%);
+   color: white;
+   align-text: center;
+}
+h1{
+   font-size: 60px;
+   animation: slide-in2 2s 1 ease;
+   animation-fill-mode: forwards;
+}
+h1.rem{
+   overflow: hidden;
+   animation: rem 2s 1 forwards;
+}
+h3.rem{
+   overflow: hidden;
+   animation: rem 2s 1 forwards;
+}
+@keyframes rem{
+   from{
+      transform: translateY(0px);
+   }
+   to{
+      transform: translateY(-500px);
+      filter: opacity(0%);
+   }
+}
+@keyframes slide-in2{
+   from{
+      filter: opacity(0%);
+      transform: translate(-100px, 200px);
+   }
+   to{
+      filter: opacity(100%);
+      transform: translate(0px 0px);
+   }
+}
+h3{
+   font-size: 40px;
+   filter: opacity(0%);
+   animation: slide-in3 2s 1 ease;
+   animation-fill-mode: forwards;
+   margin: 10px auto 150px auto;
+}
+@keyframes slide-in3{
+   from{
+      filter: opacity(0%);
+      transform: translate(100px, -200px);
+   }
+   to{
+      filter: opacity(100%);
+      transform: translate(0px 0px);
+   }
+}
+.span{
+   position: absolute;
+   filter: opacity(0%);
+   font-size: 50px;
+   transform: translate(250px, -90px);
+   animation: slide-in4 2s 1s 1 ease;
+   animation-fill-mode: forwards;
+}
+@keyframes slide-in4{
+   from{
+      filter: opacity(0%);
+      transform: translate(100px, 250px);
+   }
+   to{
+      filter: opacity(100%);
+      transform: translate(250px -250px);
+   }
+}
+.gameBoard{
+   display: flex;
+   flex-wrap: wrap;
+   width: 600px;
+   border: solid 5px white;
+   border-radius: 50px;
+   box-shadow: 0 0 60px #f800ff;
+   animation: flicker 4s infinite;
+}
+@keyframes flicker{
+   10%{
+      box-shadow: none;
+   }
+   70%{
+      box-shadow: 0 0 60px #f800ff;
+   }
+   71%{
+      box-shadow: none;
+   }
+   90%{
+      box-shadow: 0 0 70px #f800ff;
+   }
+}
+@keyframes trans{
+   from{
+      transform: translateY(200px);
+      filter: opacity(0%);
+   }
+   to{
+      transform: translateY(0px);
+      filter: opacity(100%);
+   }
+}
+p{
+   text-shadow: 0 0 15px #f800ff;
+   color: white;
+   margin-top: 150px;
+   font-size: 40px;
+   font-family: ;
+   padding: 40px;
+   border-radius: 40px;
+   border: solid 5px white;
+   box-shadow: 0 0 30px #ce00ff;
+}
+p.clicky{
+   cursor: pointer;
+   transform: translateY(50px);
+   animation: bouncy 2s infinite ease;
+}
+@keyframes bouncy{
+   from{
+      transform: translateY(50px);
+   }
+   to{
+      transform: translateY(0px);
+   }
+}
+.square{
+   border: solid 5px white;
+   width: 200px;
+   color: white;
+   height: 200px;
+   box-sizing: border-box;
+   box-shadow: inset 0 0 40px #f800ff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.circle{
+   width: 100px;
+   height: 100px;
+   border: solid 10px white;
+   background: transparent;
+   border-radius: 50%;
+   transform: translateX(-30px);
+   filter: opacity(0%);
+   box-shadow: 0 0 40px #0018ff;
+   animation: slide-in 1s 1 ease;
+   animation-fill-mode: forwards;
+}
+.circle.dis, .square.dis{
+   animation: dis .5s 1 ease;
+   animation-fill-mode: forwards;
+}
+@keyframes dis{
+   from{
+      transform: scale(1);
+   }
+   to{
+      transform: scale(0);
+   }
+}
+@keyframes slide-in{
+   from{
+      filter: opacity(0%);
+      transform: translateX(-30px);
+   }
+   to{
+      filter: opacity(100%);
+      transform: translateX(0px);
+   }
+}
+.square.o{
+   border-radius: 45px 0 0 0;
+}
+.square.i{
+   border-radius: 0 45px 0 0;
+}
+.square.w{
+   border-radius: 0 0 0 45px;
+}
+.square.q{
+   border-radius: 0 0 45px 0;
+}
+.cross{
+   height: 100px;
+   width: 100px;
+   position: relative;
+}
+@keyframes rotate{
+   from{
+      transform: rotate(0deg);
+   }
+   to{
+      transform: rotate(45deg);
+   }
+}
+.cross:before, .cross:after{
+   content: "";
+   position: absolute;
+   border: solid 10px white;
+   background: #080013;
+   box-shadow: 0 0 20px red;
+   animation: rotate 1s 1 ease;
+   animation-fill-mode: forwards;
+   border-radius: 15px;
+}
+.cross:before{
+   left: 50%;
+   width: 30%;
+   margin-left: -15%;
+   height: 100%;
+}
+.cross:after{
+   top: 50%;
+   height: 30%;
+   margin-top: -15%;
+   width: 100%;
+}
+.flex{
+   display: flex;
+   justify-content: space-around;
+   gap: 200px;
+   font-size: 60px;
+   filter: opacity(0%);
+   box-sizing: border-box;
+}
+.flex.mov{
+   filter: opacity(100%);
+   margin-bottom: 50px;
+   animation: slide-in 5s 1 ease;
+}
+#crossScore, #circleScore{
+   position: absolute;
+   transform: translateX(55px);
+}
+.left{
+   position: absolute;
+   transform: translate(-200px, -150px);
+}
+.right{
+   position: absolute;
+   transform: translate(200px, -150px);
+}
+.left.mov{
+   animation: move1 1s 1 ease;
+}
+.right.mov{
+   animation: move2 1s 1 ease;
+}
+@keyframes move1{
+   from{
+      transform: translate(-400px, 200px);
+   }
+   to{
+      transform: translate(-200px, -150px);
+      filter: opacity(100%);
+   }
+}
+@keyframes move2{
+   from{
+      transform: translate(400px, 200px);
+   }
+   to{
+      transform: translate(200px, -150px);
+      filter: opacity(100%);
+   }
+}
+.popup{
+    position: fixed;
+    z-index: 1;
+    max-width: 120vw;
+    font-size: 50px;
+    padding: 30px;
+    margin: 20px;
+    background: linear-gradient( 80deg, #0b0031, #0b0031, #0b0031, #0b0031, #2c0031);
+    border: solid 8px #fff;
+    box-shadow: inset 0 0 40px #840094;
+    border-radius: 11px;
+    text-align: center;
+    transform: translate(-0%, -0%) scale(0);
+    transition: .2s ease-in-out;
+}
+.popup.active{
+   transform: translate(-0%, -0%) scale(1);
+}
+.alert{
+    margin: 20px 500px 80px 50px;
+    transform: translateX(200px);
+}
+.retry{
+    padding: 20px 40px 20px 40px;
+    display: inline-block;
+    border-radius: 11px;
+    border: 5px solid white;
+    top: 4px;
+    color: white;
+    transitions: all .10s;
+    background-color: transparent;
+    font-size: 35px;
+    margin: 20px;
+    box-shadow: 0 0 20px #840094;
+}
+.overlay{
+  /* Set the overlay styles */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  background-color: #0a001aa7; /* Semi-transparent black overlay */
+  backdrop-filter: blur(10px); /* Adjust the value (10px) to control the intensity of the blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay.active{
+   z-index: 1;
+   }
